@@ -1,0 +1,19 @@
+
+
+public class Koneksi {
+   private static Connection mysqlkoneksi;
+   public static Connection koneksiDB()throws SQLException{
+       if(mysqlkoneksi==null){
+           try{
+               String DB = "jdbc:mysql://localhost:3307/dbalamat";
+               String user = "root";
+               String pass = "";
+               DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+               mysqlkoneksi=(Connection)DriverManager.getConnection(DB, user, pass);
+           }catch (Exception e){
+               
+           }
+       }return mysqlkoneksi;
+   }
+    
+}
